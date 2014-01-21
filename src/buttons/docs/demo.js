@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 var ButtonsCtrl = function ($scope) {
 
   $scope.singleModel = 1;

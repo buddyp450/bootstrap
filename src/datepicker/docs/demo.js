@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 var DatepickerDemoCtrl = function ($scope) {
   $scope.today = function() {
     $scope.dt = new Date();

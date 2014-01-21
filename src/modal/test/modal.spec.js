@@ -153,7 +153,7 @@ describe('$modal', function () {
 
     it('should support closing on ESC', function () {
 
-      var modal = open({template: '<div>Content</div>'});
+      open({template: '<div>Content</div>'});
       expect($document).toHaveModalsOpen(1);
 
       triggerKeyDown($document, 27);
@@ -165,7 +165,7 @@ describe('$modal', function () {
 
     it('should support closing on backdrop click', function () {
 
-      var modal = open({template: '<div>Content</div>'});
+      open({template: '<div>Content</div>'});
       expect($document).toHaveModalsOpen(1);
 
       $document.find('body > div.modal').click();
@@ -213,7 +213,7 @@ describe('$modal', function () {
     it('should allow overriding default options in a provider', function () {
 
       $modalProvider.options.backdrop = false;
-      var modal = open({template: '<div>Content</div>'});
+      open({template: '<div>Content</div>'});
 
       expect($document).toHaveModalOpenWithContent('Content', 'div');
       expect($document).not.toHaveBackdrop();
@@ -224,7 +224,7 @@ describe('$modal', function () {
       $modalProvider.options = {
         backdrop: false
       };
-      var modal = open({template: '<div>Content</div>'});
+      open({template: '<div>Content</div>'});
 
       expect($document).toHaveModalOpenWithContent('Content', 'div');
       expect($document).not.toHaveBackdrop();
@@ -237,7 +237,7 @@ describe('$modal', function () {
 
       it('should throw an error if none of template and templateUrl are provided', function () {
         expect(function(){
-          var modal = open({});
+          open({});
         }).toThrow(new Error('One of template or templateUrl options is required.'));
       });
 
@@ -259,7 +259,7 @@ describe('$modal', function () {
           $scope.isModalInstance = angular.isObject($modalInstance) && angular.isFunction($modalInstance.close);
         };
 
-        var modal = open({template: '<div>{{fromCtrl}} {{isModalInstance}}</div>', controller: TestCtrl});
+        open({template: '<div>{{fromCtrl}} {{isModalInstance}}</div>', controller: TestCtrl});
         expect($document).toHaveModalOpenWithContent('Content from ctrl true', 'div');
       });
     });
@@ -440,8 +440,8 @@ describe('$modal', function () {
 
     it('should not close any modals on ESC if the topmost one does not allow it', function () {
 
-      var modal1 = open({template: '<div>Modal1</div>'});
-      var modal2 = open({template: '<div>Modal2</div>', keyboard: false});
+      open({template: '<div>Modal1</div>'});
+      open({template: '<div>Modal2</div>', keyboard: false});
 
       triggerKeyDown($document, 27);
       $rootScope.$digest();
@@ -451,8 +451,8 @@ describe('$modal', function () {
 
     it('should not close any modals on click if a topmost modal does not have backdrop', function () {
 
-      var modal1 = open({template: '<div>Modal1</div>'});
-      var modal2 = open({template: '<div>Modal2</div>', backdrop: false});
+      open({template: '<div>Modal1</div>'});
+      open({template: '<div>Modal2</div>', backdrop: false});
 
       $document.find('body > div.modal-backdrop').click();
       $rootScope.$digest();
@@ -462,8 +462,8 @@ describe('$modal', function () {
 
     it('multiple modals should not interfere with default options', function () {
 
-      var modal1 = open({template: '<div>Modal1</div>', backdrop: false});
-      var modal2 = open({template: '<div>Modal2</div>'});
+      open({template: '<div>Modal1</div>', backdrop: false});
+      open({template: '<div>Modal2</div>'});
       $rootScope.$digest();
 
       expect($document).toHaveBackdrop();

@@ -17,7 +17,7 @@ angular.module('ui.bootstrap.dropdownToggle', []).directive('dropdownToggle', ['
       closeMenu   = angular.noop;
   return {
     restrict: 'CA',
-    link: function(scope, element, attrs) {
+    link: function(scope, element) {
       scope.$on('$locationChangeSuccess', function() { closeMenu(); });
       element.parent().bind('click', function() { closeMenu(); });
       element.bind('click', function (event) {

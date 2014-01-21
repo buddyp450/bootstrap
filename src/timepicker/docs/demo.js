@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 var TimepickerDemoCtrl = function ($scope) {
   $scope.mytime = new Date();
 

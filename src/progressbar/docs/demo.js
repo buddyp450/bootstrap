@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 var ProgressDemoCtrl = function ($scope) {
 
   $scope.max = 200;

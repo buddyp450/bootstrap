@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 function AlertDemoCtrl($scope) {
   $scope.alerts = [
     { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },

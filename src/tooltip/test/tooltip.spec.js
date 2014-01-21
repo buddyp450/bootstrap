@@ -143,7 +143,7 @@ describe('tooltip', function() {
     expect( elmBody.children().length ).toBe( 0 );
   }));
 
-  it('issue 1191 - isolate scope on the popup should always be child of correct element scope', inject( function ( $compile ) {
+  it('issue 1191 - isolate scope on the popup should always be child of correct element scope', function () {
     var ttScope;
     elm.trigger( 'mouseenter' );
 
@@ -159,7 +159,7 @@ describe('tooltip', function() {
     expect( ttScope.$parent ).toBe( elmScope );
 
     elm.trigger( 'mouseleave' );
-  }));
+  });
 
   describe('with specified enable expression', function() {
 
@@ -283,18 +283,16 @@ describe('tooltip', function() {
 
       $compile(elmBody)(scope);
       scope.$apply();
-      var elm1 = elmBody.find('input').eq(0);
-      var elm2 = elmBody.find('input').eq(1);
-      var elmScope1 = elm1.scope();
-      var elmScope2 = elm2.scope();
+      var elm = elmBody.find('input').eq(1);
+      var elmScope = elm.scope();
 
       scope.$apply('test = false');
 
-      elm2.trigger('mouseenter');
-      expect( elmScope2.tt_isOpen ).toBeFalsy();
+      elm.trigger('mouseenter');
+      expect( elmScope.tt_isOpen ).toBeFalsy();
 
-      elm2.click();
-      expect( elmScope2.tt_isOpen ).toBeTruthy();
+      elm.click();
+      expect( elmScope.tt_isOpen ).toBeTruthy();
     }));
   });
 
@@ -352,19 +350,16 @@ describe('tooltip', function() {
       tooltipScope = elmScope.$$childTail;
     }));
 
-    it( 'should not contain a cached reference when visible', inject( function( $timeout ) {
+    it( 'should not contain a cached reference when visible', function() {
       expect( inCache() ).toBeTruthy();
       elmScope.$destroy();
       expect( inCache() ).toBeFalsy();
-    }));
+    });
   });
 });
 
 describe('tooltipWithDifferentSymbols', function() {
-    var elm,
-        elmBody,
-        scope,
-        elmScope;
+    var elmBody;
 
     // load the tooltip code
     beforeEach(module('ui.bootstrap.tooltip'));
@@ -441,8 +436,7 @@ describe( '$tooltipProvider', function() {
   var elm,
       elmBody,
       scope,
-      elmScope,
-      body;
+      elmScope;
 
   describe( 'popupDelay', function() {
     beforeEach(module('ui.bootstrap.tooltip', function($tooltipProvider){

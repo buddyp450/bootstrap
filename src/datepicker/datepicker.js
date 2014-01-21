@@ -465,7 +465,7 @@ function ($compile, $parse, $document, $position, dateFilter, datepickerPopupCon
     replace: true,
     transclude: true,
     templateUrl: 'template/datepicker/popup.html',
-    link:function (scope, element, attrs) {
+    link:function (scope, element) {
       element.bind('click', function(event) {
         event.preventDefault();
         event.stopPropagation();

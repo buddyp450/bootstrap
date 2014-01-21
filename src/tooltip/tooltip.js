@@ -108,7 +108,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
       return {
         restrict: 'EA',
         scope: true,
-        compile: function (tElem, tAttrs) {
+        compile: function () {
           var tooltipLinker = $compile( template );
 
           return function link ( scope, element, attrs ) {

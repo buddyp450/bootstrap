@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 function CarouselDemoCtrl($scope) {
   $scope.myInterval = 5000;
   var slides = $scope.slides = [];

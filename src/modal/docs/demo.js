@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 var ModalDemoCtrl = function ($scope, $modal, $log) {
 
   $scope.items = ['item1', 'item2', 'item3'];

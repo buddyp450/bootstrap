@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 function DropdownCtrl($scope) {
   $scope.items = [
     'The first choice!',

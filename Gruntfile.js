@@ -332,7 +332,6 @@ module.exports = function(grunt) {
     if (process.env.TRAVIS) {
       grunt.task.run('karma:travis');
     } else {
-      var isToRunJenkinsTask = !!this.args.length;
       if(grunt.option('coverage')) {
         var karmaOptions = grunt.config.get('karma.options'),
           coverageOpts = grunt.config.get('karma.coverage');

@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 function TypeaheadCtrl($scope, $http) {
 
   $scope.selected = undefined;

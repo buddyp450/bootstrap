@@ -1,3 +1,5 @@
+/*jshint unused:false */
+
 var PaginationDemoCtrl = function ($scope) {
   $scope.totalItems = 64;
   $scope.currentPage = 4;
