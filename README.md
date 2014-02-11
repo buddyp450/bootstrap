@@ -76,7 +76,7 @@ If you are having problems making some directives work, there are several ways t
 * Ask a question in [stackoverflow](http://stackoverflow.com/) under the [angular-ui-bootstrap](http://stackoverflow.com/questions/tagged/angular-ui-bootstrap) tag.
 * Write your question in our [mailing list](https://groups.google.com/forum/#!categories/angular-ui/bootstrap).
 
-Project's issue on GitHub should be used discuss bugs and features.
+Project's issue on GitHub should be used to discuss bugs and features. If you really think that it is a bug, please use this [plunker](http://plnkr.co/edit/tpl:eyDBtuQkLVbBtB5pY5VN?p=catalogue) to reproduce your problem and link it to us on the issue's message.
 
 ## Contributing to the project
 
